@@ -32,4 +32,9 @@ public class RegController {
     public void deleteUser(@PathVariable("id") int id){
         users.delete(id);
     }
+
+    @RequestMapping(path = "/user/{id}", method = RequestMethod.GET)
+    public User getUser(@PathVariable("id") int id){
+        return users.findOne(id);
+    }
 }
